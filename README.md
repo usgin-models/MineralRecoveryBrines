@@ -1,1 +1,2 @@
 # MineralRecoveryBrines
+This information exchange documents a content model for describing observations made by various processes of recovering minerals (specifically REEs) from geothermal brines. The process or technique used should be indicated in the RecoveryTechnique field and carefully described in the RecoveryProcedure field. 
