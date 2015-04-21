@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Laura Bookman (private) -->
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines" elementFormDefault="qualified" version="00.00">
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
+	<xs:annotation>
+		<!--This XSD document, including XML schema, indicates the content requested for AASG geothermal data interoperable web services for description of rock chemistry data. In the geothermal data system, chemical observations are one of the observation services that are used as a method to discover resources derived from physical samples with particular characteristics. Each chemical analysis observation should have a unique AnalysisURI and a corresponding SamplingFeatureURI-->
+		<!--Annotated version 0.4.1. "dateTime" data types were indicated in version 0.4.2. This XSD document was created on 2013-01-28 by Christy Caudill, AZGS; edited 2/27/2013. This schema is based on the data available in the AASG Web Feature Services created for rock chemistry. Edited to include Single Analyte suite. Field Description annotations standardized 2013-08-22 by Esty Pape, AZGS.-->
+		<xs:appinfo source="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd">
+			<gmlsf:ComplianceLevel>0</gmlsf:ComplianceLevel>
+			<gmlsf:GMLProfileSchema>
+http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd </gmlsf:GMLProfileSchema>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="ExperimentalData" type="aasg:ExperimentalDataType" substitutionGroup="gml:_Feature"/>
+	<xs:element name="ScaledProcessAndEconomics" type="aasg:ScaledProcessAndEconomicsType" substitutionGroup="gml:_Feature"/>
+	<xs:complexType name="SampleAnalysisCommonType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="OBJECTID" type="xs:int" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Integer record count, added by ArcGIS servers during service deployment; not required but cannot be removed when deploying from ArcGIS feature class. Not user maintained, so this element appears in XML implementation but not in the Content Model Template.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="RemovalSampleURI">
+						<xs:annotation>
+							<xs:documentation>A unique identifier for this observation.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="RemovalSampleName" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Researcher defined sample common name.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Source" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Short text explanation of source of information defining feature; may be author-date type 
+citation, but should include some indication of how digital data originated. If unpublished data, provide researcher name, date and research institution for proper citation. Separate multiple citations with pipe ('|') character.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="RelatedResources" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Related document or data resource, preferably accessible online. If data is compiled in the USGIN Aq
+ueousChemistry model, BrineRareEarths analyte suite, URIs in http link should be given here.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="Notes" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Any additional information to be provided, including description and other data not captured by the
+							</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="MetadataURI" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>URI identifying (and ideally dereferencing to get) a full formal metadata record for the observation 
+report. A time series of observations may all reference the same metadata record that provides contact 
+information and details on procedure, etc.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExperimentalDataType">
+		<xs:complexContent>
+			<xs:extension base="aasg:SampleAnalysisCommonType">
+				<xs:sequence>
+					<xs:element name="BrineType" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineChemistry" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineSource" type="xs:string" minOccurs="0"/>
+					<xs:element name="AnalysisURIAqueousChemistry" type="xs:string" minOccurs="0"/>
+					<xs:element name="AnalysisURIRockChemistry" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTMZone" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTME" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTMN" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExperimentDate" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaFormulationNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExperimentalDataNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsBrineTemperature" type="xs:string" minOccurs="0"/>
+					<xs:element name="pH" type="xs:double" minOccurs="0"/>
+					<xs:element name="RMChemicalStability" type="xs:string" minOccurs="0"/>
+					<xs:element name="RMThermalStability" type="xs:string" minOccurs="0"/>
+					<xs:element name="RMContactEfficiency" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaConcentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsRemovalMedia_Concentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalEfficiency" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsRemovalEfficiency" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalSelectivity" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsRemovalSelectivity" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaCapacity" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsRemovalMediaCapacity" type="xs:string" minOccurs="0"/>
+					<xs:element name="ReactionKinetics" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsReactionKinetics" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementExtractionTechnique" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementalConcentrationsOnRemovalMedia" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsElementalConcentrationsOnRemovalMedia" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExtractionTemperature" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsExtractionTemperature" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExtractionpH" type="xs:double" minOccurs="0"/>
+					<xs:element name="ExtractionAgentConcentration" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsExtractionAgentConcentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
+					<xs:element name="Shape" type="gml:PointPropertyType"/>
+					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ScaledProcessAndEconomicsType">
+		<xs:complexContent>
+			<xs:extension base="aasg:SampleAnalysisCommonType">
+				<xs:sequence>
+					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrinePreConditioningNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="ReactorTypeFlowCapacityDesignAssumptionsNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsBrineTemperature" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineFlowRateReactor" type="xs:string" minOccurs="0"/>
+					<xs:element name="pH" type="xs:double" minOccurs="0"/>
+					<xs:element name="BrineFlowRateReactor" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsBrineFlowRate" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementConcentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsElementConcentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalEfficiency" type="xs:string" minOccurs="0"/>
+					<xs:element name="UnitsRemovalEfficiency" type="xs:string" minOccurs="0"/>
+					<xs:element name="NotesReactorFowling" type="xs:string" minOccurs="0"/>
+					<xs:element name="ReactorLifetimeAndCleanup" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementAnnualRecovery" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsElementAnnualRecovery" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementMarketPrice" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsElementMarketPrice" type="xs:string" minOccurs="0"/>
+					<xs:element name="CostBasisYear" type="xs:double" minOccurs="0"/>
+					<xs:element name="AnnualRevenue" type="xs:double" minOccurs="0"/>
+					<xs:element name="ProcessCapitalCosts" type="xs:string" minOccurs="0"/>
+					<xs:element name="CostAssumptionNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="RateoOfReturn" type="xs:string" minOccurs="0"/>
+					<xs:element name="RateOfReturnAssumptions" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaLifetime" type="xs:string" minOccurs="0"/>
+					<xs:element name="Shape" type="gml:PointPropertyType"/>
+					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
