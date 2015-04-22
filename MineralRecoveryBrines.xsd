@@ -52,7 +52,7 @@ ueousChemistry model, BrineRareEarths analyte suite, URIs in http link should be
 					</xs:element>
 					<xs:element name="Notes" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>Any additional information to be provided, including description and other data not captured by the
+							<xs:documentation>Any additional information to be provided, including description and other data not captured by the template, details about collection method, contact information for related parties (original collector, project PI), collection platform or Launch, etc.
 							</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
@@ -82,8 +82,8 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="AnalysisURIAqueousChemistry" type="xs:string" minOccurs="0"/>
 					<xs:element name="AnalysisURIRockChemistry" type="xs:string" minOccurs="0"/>
 					<xs:element name="UTMZone" type="xs:string" minOccurs="0"/>
-					<xs:element name="UTME" type="xs:string" minOccurs="0"/>
-					<xs:element name="UTMN" type="xs:string" minOccurs="0"/>
+					<xs:element name="UTME" type="xs:double" minOccurs="0"/>
+					<xs:element name="UTMN" type="xs:double" minOccurs="0"/>
 					<xs:element name="ExperimentDate" type="xs:dateTime" minOccurs="0"/>
 					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
 					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
@@ -95,8 +95,8 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="RMChemicalStability" type="xs:string" minOccurs="0"/>
 					<xs:element name="RMThermalStability" type="xs:string" minOccurs="0"/>
 					<xs:element name="RMContactEfficiency" type="xs:string" minOccurs="0"/>
-					<xs:element name="RemovalMediaConcentration" type="xs:string" minOccurs="0"/>
-					<xs:element name="UnitsRemovalMedia_Concentration" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaConcentration" type="xs:double" minOccurs="0"/>
+					<xs:element name="UnitsRemovalMediaConcentration" type="xs:string" minOccurs="0"/>
 					<xs:element name="RemovalEfficiency" type="xs:string" minOccurs="0"/>
 					<xs:element name="UnitsRemovalEfficiency" type="xs:string" minOccurs="0"/>
 					<xs:element name="RemovalSelectivity" type="xs:string" minOccurs="0"/>
@@ -106,16 +106,16 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="ReactionKinetics" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsReactionKinetics" type="xs:string" minOccurs="0"/>
 					<xs:element name="ElementExtractionTechnique" type="xs:string" minOccurs="0"/>
-					<xs:element name="ElementalConcentrationsOnRemovalMedia" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementalConcentrationsOnRemovalMedia" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsElementalConcentrationsOnRemovalMedia" type="xs:string" minOccurs="0"/>
-					<xs:element name="ExtractionTemperature" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExtractionTemperature" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsExtractionTemperature" type="xs:string" minOccurs="0"/>
 					<xs:element name="ExtractionpH" type="xs:double" minOccurs="0"/>
 					<xs:element name="ExtractionAgentConcentration" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsExtractionAgentConcentration" type="xs:string" minOccurs="0"/>
-					<xs:element name="ExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExtractionAmountEachElement" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
-					<xs:element name="Shape" type="gml:PointPropertyType"/>
+					<xs:element name="RemovalMediaLifetime" type="xs:string" minOccurs="0"/>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
@@ -131,7 +131,6 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="ReactorTypeFlowCapacityDesignAssumptionsNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsBrineTemperature" type="xs:string" minOccurs="0"/>
-					<xs:element name="BrineFlowRateReactor" type="xs:string" minOccurs="0"/>
 					<xs:element name="pH" type="xs:double" minOccurs="0"/>
 					<xs:element name="BrineFlowRateReactor" type="xs:string" minOccurs="0"/>
 					<xs:element name="UnitsBrineFlowRate" type="xs:string" minOccurs="0"/>
@@ -151,8 +150,6 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="CostAssumptionNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateoOfReturn" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateOfReturnAssumptions" type="xs:string" minOccurs="0"/>
-					<xs:element name="RemovalMediaLifetime" type="xs:string" minOccurs="0"/>
-					<xs:element name="Shape" type="gml:PointPropertyType"/>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
