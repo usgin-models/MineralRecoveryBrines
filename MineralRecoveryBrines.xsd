@@ -116,6 +116,8 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="ExtractionAmountEachElement" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
 					<xs:element name="RemovalMediaLifetime" type="xs:string" minOccurs="0"/>
+				<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
+					<xs:element name="End" type="xs:string" default="theEnd"/>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
@@ -150,6 +152,8 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="CostAssumptionNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateoOfReturn" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateOfReturnAssumptions" type="xs:string" minOccurs="0"/>
+<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
+					<xs:element name="End" type="xs:string" default="theEnd"/>					
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
