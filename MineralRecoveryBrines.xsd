@@ -76,7 +76,7 @@ information and details on procedure, etc.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="aasg:SampleAnalysisCommonType">
 				<xs:sequence>
-					<xs:element name="BrineType" type="xs:string" minOccurs="0"/>
+					<xs:element name="BrineType" type="xs:string" />
 					<xs:element name="BrineChemistry" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrineSource" type="xs:string" minOccurs="0"/>
 					<xs:element name="AnalysisURIAqueousChemistry" type="xs:string" minOccurs="0"/>
@@ -84,10 +84,10 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="UTMZone" type="xs:string" minOccurs="0"/>
 					<xs:element name="UTME" type="xs:double" minOccurs="0"/>
 					<xs:element name="UTMN" type="xs:double" minOccurs="0"/>
-					<xs:element name="ExperimentDate" type="xs:dateTime" minOccurs="0"/>
-					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
-					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
-					<xs:element name="RemovalMediaFormulationNotes" type="xs:string" minOccurs="0"/>
+					<xs:element name="ExperimentDate" type="xs:dateTime"/>
+					<xs:element name="ElementEvaluated" type="xs:string"/>
+					<xs:element name="RemovalMediaDescription" type="xs:string"/>
+					<xs:element name="RemovalMediaFormulationNotes" type="xs:string"/>
 					<xs:element name="ExperimentalDataNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsBrineTemperature" type="xs:string" minOccurs="0"/>
@@ -116,7 +116,7 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="ExtractionAmountEachElement" type="xs:double" minOccurs="0"/>
 					<xs:element name="UnitsExtractionAmountEachElement" type="xs:string" minOccurs="0"/>
 					<xs:element name="RemovalMediaLifetime" type="xs:string" minOccurs="0"/>
-				<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
+					<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
 					<xs:element name="End" type="xs:string" default="theEnd"/>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
@@ -127,8 +127,8 @@ information and details on procedure, etc.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="aasg:SampleAnalysisCommonType">
 				<xs:sequence>
-					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
-					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
+					<xs:element name="RemovalMediaDescription" type="xs:string"/>
+					<xs:element name="ElementEvaluated" type="xs:string"/>
 					<xs:element name="BrinePreConditioningNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="ReactorTypeFlowCapacityDesignAssumptionsNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
@@ -152,8 +152,8 @@ information and details on procedure, etc.</xs:documentation>
 					<xs:element name="CostAssumptionNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateoOfReturn" type="xs:string" minOccurs="0"/>
 					<xs:element name="RateOfReturnAssumptions" type="xs:string" minOccurs="0"/>
-<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
-					<xs:element name="End" type="xs:string" default="theEnd"/>					
+					<!-- this bogacity is necessary because the field before the extension point (xs:any) has to be mandatory for the schema to be valid -->
+					<xs:element name="End" type="xs:string" default="theEnd"/>
 					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
