@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) by Laura Bookman (private) -->
-<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines/0.11" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines" elementFormDefault="qualified" version="00.00">
+<xs:schema xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines/0.11" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" xmlns:gmlsf="http://www.opengis.net/gmlsf" xmlns:ns1="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines" targetNamespace="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines" elementFormDefault="qualified" version="00.00">
 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/gmlsf" schemaLocation="http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd"/>
 	<xs:annotation>
@@ -127,8 +127,8 @@ information and details on procedure, etc.</xs:documentation>
 		<xs:complexContent>
 			<xs:extension base="aasg:SampleAnalysisCommonType">
 				<xs:sequence>
-					<xs:element name="RemovalMediaDescription" type="xs:string"/>
-					<xs:element name="ElementEvaluated" type="xs:string"/>
+					<xs:element name="RemovalMediaDescription" type="xs:string" minOccurs="0"/>
+					<xs:element name="ElementEvaluated" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrinePreConditioningNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="ReactorTypeFlowCapacityDesignAssumptionsNotes" type="xs:string" minOccurs="0"/>
 					<xs:element name="BrineTemperature" type="xs:double" minOccurs="0"/>
