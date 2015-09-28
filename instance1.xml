@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aasg:ExperimentalData xmlns:aasg="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines"
+ xmlns="http://www.opengis.net/gml"
+ xmlns:gmlsf="http://www.opengis.net/gmlsf"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language"
+ xmlns:smil20="http://www.w3.org/2001/SMIL20/"
+ xmlns:sch="http://www.ascc.net/xml/schematron"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://stategeothermaldata.org/uri-gin/aasg/xmlschema/MineralRecoveryBrines file:/F:/GitHub/USGIN-models/MineralRecoveryBrines/MineralRecoveryBrines.xsd">
+    <aasg:RemovalSampleURI>RemovalSampleURI0</aasg:RemovalSampleURI>
+    <aasg:RemovalSampleName>RemovalSampleName0</aasg:RemovalSampleName>
+    <aasg:Source>Source0</aasg:Source>
+    <aasg:End>theEnd</aasg:End>
+</aasg:ExperimentalData>
